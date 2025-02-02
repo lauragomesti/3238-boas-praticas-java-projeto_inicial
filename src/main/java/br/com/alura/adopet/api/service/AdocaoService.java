@@ -1,6 +1,7 @@
 package br.com.alura.adopet.api.service;
 
 
+import br.com.alura.adopet.api.dto.SolicitacaoAdocaoDto;
 import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.model.Adocao;
 import br.com.alura.adopet.api.model.StatusAdocao;
@@ -26,7 +27,7 @@ public class AdocaoService {
     private EmailService emailService;
 
 
-    public void solicitar(Adocao adocao) {
+    public void solicitar(SolicitacaoAdocaoDto adocao) {
          if (adocao.getPet().getAdotado() == true) {
              throw new ValidacaoException("Pet já foi adotado!");
 
